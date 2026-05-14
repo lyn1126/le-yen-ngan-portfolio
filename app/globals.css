@@ -53,24 +53,24 @@
     "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-geist-mono:
     "Cascadia Code", "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
-  --background: oklch(0.992 0.006 247.85);
-  --foreground: oklch(0.255 0.036 255.29);
+  --background: oklch(0.992 0.007 245.78);
+  --foreground: oklch(0.23 0.03 253.21);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.255 0.036 255.29);
+  --card-foreground: oklch(0.23 0.03 253.21);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.255 0.036 255.29);
-  --primary: oklch(0.58 0.19 258.34);
+  --popover-foreground: oklch(0.23 0.03 253.21);
+  --primary: oklch(0.52 0.18 255.17);
   --primary-foreground: oklch(0.985 0.01 255);
-  --secondary: oklch(0.965 0.012 248.66);
-  --secondary-foreground: oklch(0.33 0.04 255.45);
-  --muted: oklch(0.972 0.008 247.91);
-  --muted-foreground: oklch(0.52 0.03 252.11);
-  --accent: oklch(0.94 0.02 248.8);
-  --accent-foreground: oklch(0.3 0.04 255.29);
+  --secondary: oklch(0.968 0.01 247.65);
+  --secondary-foreground: oklch(0.29 0.035 253.61);
+  --muted: oklch(0.975 0.006 247.41);
+  --muted-foreground: oklch(0.47 0.026 251.94);
+  --accent: oklch(0.946 0.018 247.43);
+  --accent-foreground: oklch(0.28 0.033 253.46);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.91 0.015 247.94);
-  --input: oklch(0.91 0.015 247.94);
-  --ring: oklch(0.72 0.12 255.08);
+  --border: oklch(0.905 0.012 248.12);
+  --input: oklch(0.905 0.012 248.12);
+  --ring: oklch(0.67 0.13 254.19);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -128,6 +128,7 @@
   body {
     @apply bg-background text-foreground;
     background-attachment: fixed;
+    text-rendering: optimizeLegibility;
   }
   html {
     @apply font-sans;

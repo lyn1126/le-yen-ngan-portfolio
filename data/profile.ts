@@ -11,11 +11,13 @@ export type Profile = {
     linkedin: string;
   };
   badges: string[];
+  quickFacts: string[];
   about: string[];
   objectives: Array<{
     title: string;
     content: string;
   }>;
+  whatICanHelpWith: string[];
   skills: Array<{
     title: string;
     items: string[];
@@ -30,24 +32,34 @@ export type Profile = {
   projects: Array<{
     title: string;
     description: string;
+    context: string;
     tasks: string[];
+    outcome: string;
     skills: string;
   }>;
   whyMe: Array<{
     title: string;
     content: string;
   }>;
+  workflow: string[];
+  availability: {
+    title: string;
+    items: string[];
+  };
+  contactTitle: string;
+  contactDescription: string;
 };
 
 export const profile: Profile = {
   name: "Lê Yến Ngân",
   role: "E-commerce Operations Intern",
-  headline: "Sinh viên năm 2 định hướng E-commerce Operations",
+  headline:
+    "Sinh viên năm 2 định hướng E-commerce Operations, yêu thích công việc cần sự cẩn thận, rõ ràng và bám sát quy trình.",
   intro:
-    "Em đang tìm kiếm cơ hội thực tập hoặc part-time trong lĩnh vực vận hành sàn thương mại điện tử. Với tinh thần học hỏi nhanh, cẩn thận trong công việc và mong muốn phát triển trong môi trường thực tế, em hy vọng có thể tham gia hỗ trợ các công việc như quản lý sản phẩm, theo dõi đơn hàng, cập nhật dữ liệu, chăm sóc khách hàng và hỗ trợ các chương trình bán hàng trên sàn.",
-  email: "your-email@example.com",
-  phone: "0123456789",
-  location: "TP.HCM / Remote / Hybrid",
+    "Em đang tìm kiếm cơ hội thực tập hoặc part-time trong lĩnh vực vận hành sàn thương mại điện tử. Em có định hướng phát triển lâu dài với công việc liên quan đến đăng tải và cập nhật sản phẩm, kiểm tra dữ liệu, theo dõi đơn hàng, hỗ trợ khách hàng cơ bản và phối hợp triển khai các hoạt động bán hàng trên sàn.",
+  email: "yennganle92@gmail.com",
+  phone: "0977346274",
+  location: "TP.HCM / Hybrid / Remote",
   socials: {
     facebook: "",
     linkedin: "",
@@ -55,74 +67,86 @@ export const profile: Profile = {
   badges: [
     "E-commerce Operations",
     "Internship / Part-time",
-    "Second-year Student",
+    "Google Sheets / Excel cơ bản",
+  ],
+  quickFacts: [
+    "Sinh viên năm 2",
+    "Định hướng vận hành sàn TMĐT",
+    "Có thể hỗ trợ công việc theo checklist",
+    "Quan tâm đến dữ liệu, sản phẩm và trải nghiệm khách hàng",
   ],
   about: [
-    "Em là Lê Yến Ngân, hiện là sinh viên năm 2 và đang định hướng phát triển trong lĩnh vực thương mại điện tử, đặc biệt là mảng vận hành sàn.",
-    "Dù chưa có nhiều kinh nghiệm thực tế, em có sự quan tâm đến cách một gian hàng online được quản lý, vận hành và tối ưu hằng ngày.",
-    "Em yêu thích những công việc cần sự cẩn thận, rõ ràng và có quy trình như nhập liệu sản phẩm, kiểm tra thông tin đơn hàng, theo dõi tồn kho, hỗ trợ phản hồi khách hàng và phối hợp xử lý các vấn đề phát sinh.",
+    "Em là Lê Yến Ngân, hiện là sinh viên năm 2 và đang định hướng phát triển trong lĩnh vực thương mại điện tử, đặc biệt là mảng vận hành sàn. Em quan tâm đến cách một gian hàng online được tổ chức, cập nhật, theo dõi và tối ưu mỗi ngày để vận hành ổn định hơn.",
+    "Điểm em phù hợp với công việc này là sự cẩn thận, tinh thần học hỏi và khả năng làm việc theo quy trình. Em thích những đầu việc cần kiểm tra chi tiết, sắp xếp thông tin rõ ràng, cập nhật dữ liệu chính xác và phối hợp xử lý các việc phát sinh một cách có hệ thống.",
   ],
   objectives: [
     {
       title: "Mục tiêu ngắn hạn",
       content:
-        "Em mong muốn có cơ hội thực tập hoặc làm việc part-time ở vị trí vận hành sàn thương mại điện tử để được tiếp xúc với quy trình làm việc thực tế.",
+        "Em mong muốn có cơ hội thực tập hoặc làm việc part-time ở vị trí E-commerce Operations để được tiếp cận trực tiếp với quy trình vận hành gian hàng, học cách phối hợp công việc thực tế và rèn sự chính xác trong từng đầu việc hằng ngày.",
     },
     {
       title: "Mục tiêu dài hạn",
       content:
-        "Em mong muốn phát triển trở thành nhân sự E-commerce Operations có khả năng theo dõi hiệu quả vận hành gian hàng, hỗ trợ tối ưu nội dung sản phẩm và phối hợp triển khai chương trình khuyến mãi.",
+        "Em muốn phát triển thành nhân sự E-commerce Operations có khả năng hỗ trợ quản lý sản phẩm, cập nhật dữ liệu, theo dõi hiệu quả vận hành và phối hợp triển khai các chương trình bán hàng trên sàn một cách ổn định, có trách nhiệm.",
     },
+  ],
+  whatICanHelpWith: [
+    "Hỗ trợ đăng tải và cập nhật thông tin sản phẩm trên sàn",
+    "Kiểm tra tên sản phẩm, mô tả, phân loại, giá bán và hình ảnh trước khi cập nhật",
+    "Hỗ trợ theo dõi trạng thái đơn hàng và tổng hợp thông tin đơn cơ bản",
+    "Cập nhật dữ liệu bán hàng, tồn kho hoặc danh sách sản phẩm trên Google Sheets / Excel",
+    "Soạn phản hồi cơ bản cho khách hàng theo tình huống phổ biến",
+    "Hỗ trợ chuẩn bị voucher, campaign và các chương trình khuyến mãi đơn giản",
   ],
   skills: [
     {
       title: "Vận hành sàn TMĐT",
       items: [
-        "Hỗ trợ đăng tải và cập nhật thông tin sản phẩm",
-        "Kiểm tra tên sản phẩm, mô tả, giá bán và hình ảnh",
-        "Theo dõi trạng thái đơn hàng cơ bản",
-        "Hỗ trợ cập nhật tồn kho",
-        "Hỗ trợ voucher, campaign và chương trình bán hàng",
+        "Hỗ trợ đăng tải và chỉnh sửa thông tin sản phẩm",
+        "Rà soát mô tả, giá bán, phân loại và hình ảnh trước khi cập nhật",
+        "Theo dõi các đầu việc lặp lại theo checklist",
+        "Hỗ trợ kiểm tra trạng thái đơn hàng cơ bản",
       ],
     },
     {
-      title: "Nhập liệu & công cụ văn phòng",
+      title: "Dữ liệu & công cụ",
       items: [
         "Google Sheets / Excel cơ bản",
-        "Nhập liệu cẩn thận và có tổ chức",
-        "Sắp xếp dữ liệu theo bảng và checklist",
-        "Kiểm tra thông tin trước khi cập nhật",
+        "Nhập liệu cẩn thận, có tổ chức",
+        "Sắp xếp dữ liệu theo bảng, cột và checklist rõ ràng",
+        "Đối chiếu và kiểm tra thông tin trước khi cập nhật",
       ],
     },
     {
       title: "Hỗ trợ khách hàng",
       items: [
         "Giao tiếp lịch sự, rõ ràng",
-        "Soạn tin nhắn phản hồi khách hàng cơ bản",
-        "Ghi nhận vấn đề của khách hàng",
-        "Hỗ trợ các tình huống đơn giản về đơn hàng và đổi trả",
+        "Soạn phản hồi ngắn gọn cho các câu hỏi thường gặp",
+        "Ghi nhận vấn đề của khách hàng để chuyển xử lý",
+        "Hỗ trợ các tình huống cơ bản liên quan đến đơn hàng, giao hàng và đổi trả",
       ],
     },
     {
-      title: "Kỹ năng mềm",
+      title: "Tác phong làm việc",
       items: [
-        "Cẩn thận và có trách nhiệm",
-        "Chủ động học hỏi",
-        "Biết tiếp nhận góp ý",
-        "Quản lý thời gian cá nhân",
-        "Làm việc nhóm",
+        "Cẩn thận với chi tiết",
+        "Chủ động học hỏi và tiếp nhận góp ý",
+        "Có trách nhiệm với công việc được giao",
+        "Biết sắp xếp công việc cá nhân và theo tiến độ",
+        "Có thể làm việc theo quy trình và checklist",
       ],
     },
   ],
   education: {
-    school: "Tên trường đại học / cao đẳng",
+    school: "Trường Đại học Sư phạm Kỹ thuật TP.HCM",
     year: "Sinh viên năm 2",
-    major: "Chuyên ngành: [Điền chuyên ngành]",
-    duration: "[Năm bắt đầu] - Hiện tại",
+    major: "Khoa Thương mại điện tử",
+    duration: "2024 - Hiện tại",
     relatedKnowledge: [
+      "Thương mại điện tử",
       "Marketing căn bản",
       "Hành vi khách hàng",
-      "Thương mại điện tử",
       "Tin học ứng dụng",
       "Quản trị kinh doanh",
       "Kỹ năng giao tiếp",
@@ -130,59 +154,92 @@ export const profile: Profile = {
   },
   projects: [
     {
-      title: "Thực hành chuẩn bị thông tin sản phẩm",
+      title: "Chuẩn bị và rà soát nội dung sản phẩm",
       description:
-        "Thực hành cách chuẩn bị nội dung cơ bản cho một sản phẩm trước khi đăng bán trên gian hàng online.",
+        "Thực hành chuẩn bị thông tin cho sản phẩm trước khi đăng bán trên gian hàng online, tập trung vào sự rõ ràng và tính nhất quán của dữ liệu.",
+      context:
+        "Mô phỏng tình huống cần chuẩn hóa nội dung cho một nhóm sản phẩm trước khi cập nhật lên sàn.",
       tasks: [
-        "Viết tên sản phẩm rõ ràng, dễ hiểu",
-        "Sắp xếp thông tin sản phẩm theo bố cục hợp lý",
-        "Kiểm tra giá, phân loại và mô tả trước khi đăng",
+        "Viết lại tên sản phẩm theo hướng ngắn gọn, rõ ý và dễ tìm kiếm",
+        "Sắp xếp lại mô tả sản phẩm theo bố cục dễ đọc",
+        "Kiểm tra giá bán, phân loại và thông tin cơ bản trước khi cập nhật",
       ],
-      skills: "Nhập liệu, kiểm tra thông tin, tư duy sắp xếp nội dung",
+      outcome:
+        "Tạo được bộ nội dung sản phẩm rõ ràng hơn, dễ kiểm tra hơn trước khi đăng tải.",
+      skills:
+        "Nhập liệu, rà soát thông tin, tư duy sắp xếp nội dung, chú ý chi tiết",
     },
     {
       title: "Tìm hiểu quy trình vận hành gian hàng TMĐT",
       description:
-        "Tìm hiểu cách các gian hàng trên sàn thương mại điện tử vận hành thông qua việc quan sát sản phẩm, khuyến mãi, phản hồi khách hàng và xử lý đơn hàng.",
+        "Quan sát và ghi chú lại cách một gian hàng trên sàn thương mại điện tử vận hành từ sản phẩm đến chương trình bán hàng và phản hồi khách hàng.",
+      context:
+        "Tự nghiên cứu các shop đang hoạt động trên sàn để hiểu rõ hơn về các đầu việc vận hành thường gặp.",
       tasks: [
-        "Quan sát cách shop đặt tên và mô tả sản phẩm",
-        "Tìm hiểu voucher, flash sale và freeship",
-        "Ghi chú các bước cơ bản trong quy trình xử lý đơn hàng",
+        "Quan sát cách đặt tên và trình bày sản phẩm của shop",
+        "Tìm hiểu các hình thức voucher, flash sale và ưu đãi freeship",
+        "Ghi chú lại các bước cơ bản trong quy trình xử lý đơn hàng",
       ],
-      skills: "Quan sát, phân tích cơ bản, ghi chú quy trình",
+      outcome:
+        "Có cái nhìn thực tế hơn về cách vận hành gian hàng và các điểm cần theo dõi thường xuyên.",
+      skills:
+        "Quan sát, ghi chú quy trình, phân tích cơ bản, tư duy vận hành",
     },
     {
-      title: "Soạn mẫu phản hồi khách hàng cơ bản",
+      title: "Soạn bộ phản hồi khách hàng cơ bản",
       description:
-        "Thực hành soạn các mẫu tin nhắn phản hồi khách hàng thường gặp trong quá trình mua sắm online.",
+        "Thực hành viết các mẫu phản hồi ngắn gọn, lịch sự cho những tình huống khách hàng thường gặp khi mua sắm online.",
+      context:
+        "Mô phỏng tình huống hỗ trợ khách hàng ở mức cơ bản trong quá trình mua hàng.",
       tasks: [
         "Soạn mẫu xác nhận đơn hàng",
         "Soạn mẫu trả lời câu hỏi về sản phẩm",
-        "Soạn mẫu phản hồi khi khách hỏi về giao hàng",
+        "Soạn mẫu phản hồi khi khách hỏi về tình trạng giao hàng",
       ],
-      skills: "Giao tiếp khách hàng, viết nội dung ngắn, xử lý tình huống cơ bản",
+      outcome:
+        "Xây dựng được các mẫu phản hồi có thể dùng làm nền tảng cho công việc CSKH cơ bản.",
+      skills:
+        "Giao tiếp khách hàng, viết nội dung ngắn, xử lý tình huống cơ bản",
     },
   ],
   whyMe: [
     {
-      title: "Cẩn thận với chi tiết",
+      title: "Cẩn thận khi làm việc với dữ liệu",
       content:
-        "Em hiểu rằng công việc vận hành sàn cần sự chính xác trong từng thông tin như tên sản phẩm, giá bán, tồn kho và trạng thái đơn hàng.",
+        "Em hiểu rằng trong công việc vận hành sàn, những chi tiết như tên sản phẩm, giá bán, phân loại, tồn kho hay trạng thái đơn hàng đều cần được kiểm tra kỹ trước khi cập nhật.",
     },
     {
-      title: "Sẵn sàng học hỏi",
+      title: "Làm việc theo checklist",
       content:
-        "Em có tinh thần học hỏi và sẵn sàng tiếp nhận hướng dẫn từ anh/chị trong quá trình làm việc.",
+        "Em phù hợp với những công việc có quy trình rõ ràng. Em có xu hướng kiểm tra từng bước, đối chiếu thông tin và hoàn thành công việc theo thứ tự để hạn chế sai sót.",
     },
     {
-      title: "Có trách nhiệm",
+      title: "Chủ động học và tiếp nhận hướng dẫn",
       content:
-        "Em luôn cố gắng hoàn thành công việc đúng thời gian, chủ động hỏi lại khi chưa hiểu rõ yêu cầu.",
+        "Với vai trò thực tập hoặc part-time, em sẵn sàng học quy trình nội bộ, tiếp nhận góp ý và điều chỉnh cách làm để đáp ứng yêu cầu công việc tốt hơn.",
     },
     {
-      title: "Phù hợp với công việc có quy trình",
+      title: "Tinh thần trách nhiệm ổn định",
       content:
-        "Em yêu thích các công việc có tính hệ thống như theo dõi danh sách, cập nhật dữ liệu và xử lý công việc theo checklist.",
+        "Em luôn cố gắng hoàn thành đầu việc đúng thời gian, hỏi lại khi chưa rõ yêu cầu và giữ thái độ nghiêm túc với những công việc dù là nhỏ hay lặp lại.",
     },
   ],
+  workflow: [
+    "Nhận danh sách sản phẩm hoặc đầu việc cần cập nhật",
+    "Kiểm tra thông tin cơ bản: tên, mô tả, giá, phân loại, hình ảnh",
+    "Sắp xếp và cập nhật dữ liệu theo đúng định dạng yêu cầu",
+    "Rà soát lại sau khi cập nhật để hạn chế sai sót",
+    "Ghi chú các vấn đề phát sinh để phối hợp xử lý tiếp",
+  ],
+  availability: {
+    title: "Thời gian & hình thức làm việc",
+    items: [
+      "Đang tìm cơ hội internship hoặc part-time",
+      "Có thể làm việc tại TP.HCM, hybrid hoặc remote tùy tính chất công việc",
+      "Sẵn sàng bắt đầu với các đầu việc hỗ trợ vận hành cơ bản",
+    ],
+  },
+  contactTitle: "Liên hệ với em",
+  contactDescription:
+    "Em sẵn sàng trao đổi thêm về cơ hội internship hoặc part-time trong lĩnh vực E-commerce Operations. Nếu anh/chị đang tìm ứng viên có tinh thần học hỏi, cẩn thận và phù hợp với các đầu việc vận hành nền tảng, em rất mong có cơ hội kết nối.",
 };

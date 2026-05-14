@@ -1,6 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
 
-import { Card, CardContent } from "@/components/ui/card";
 import { Profile } from "@/data/profile";
 
 import { SectionShell } from "./section-shell";
@@ -11,16 +10,17 @@ export function About({ profile }: { profile: Profile }) {
       id="about"
       eyebrow="About"
       title="Giới thiệu ngắn gọn"
-      description="Một vài nét chính về định hướng học tập và cách em tiếp cận công việc vận hành sàn."
+      description="Tập trung vào định hướng nghề nghiệp và cách em tiếp cận những công việc đòi hỏi sự ổn định, cẩn thận và rõ quy trình."
     >
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="grid gap-6 lg:grid-cols-2">
         {profile.about.map((item) => (
-          <Card key={item} className="border-primary/10 bg-background/80">
-            <CardContent className="flex h-full flex-col gap-4 pt-4">
-              <CheckCircle2 className="size-5 text-primary" />
-              <p className="leading-7 text-muted-foreground">{item}</p>
-            </CardContent>
-          </Card>
+          <article
+            key={item}
+            className="rounded-[1.75rem] border border-border/70 bg-white/75 p-6 shadow-[0_18px_60px_-40px_rgba(15,23,42,0.24)]"
+          >
+            <CheckCircle2 className="size-5 text-primary" />
+            <p className="mt-5 text-[15px] leading-8 text-muted-foreground">{item}</p>
+          </article>
         ))}
       </div>
     </SectionShell>

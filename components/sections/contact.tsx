@@ -1,13 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Profile } from "@/data/profile";
 
 import { SectionShell } from "./section-shell";
@@ -17,20 +10,16 @@ export function Contact({ profile }: { profile: Profile }) {
     <SectionShell
       id="contact"
       eyebrow="Contact"
-      title="Liên hệ"
-      description="Em sẵn sàng trao đổi thêm về cơ hội internship hoặc part-time trong lĩnh vực E-commerce Operations."
+      title={profile.contactTitle}
+      description={profile.contactDescription}
     >
-      <Card className="border-primary/10 bg-gradient-to-br from-primary/6 via-background to-background">
-        <CardHeader>
-          <CardTitle>Kết nối nhanh</CardTitle>
-          <CardDescription className="text-sm leading-7 text-muted-foreground">
-            Hiện tại em ưu tiên các công việc tại TP.HCM, remote hoặc hybrid và có thể bắt
-            đầu với các đầu việc hỗ trợ vận hành cơ bản.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div className="grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl bg-background/80 p-4 ring-1 ring-border">
+      <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_21rem]">
+        <div className="rounded-[2rem] border border-primary/12 bg-[linear-gradient(135deg,rgba(239,246,255,0.9),rgba(255,255,255,0.96))] p-6 sm:p-8">
+          <p className="text-[11px] font-semibold tracking-[0.24em] text-primary uppercase">
+            {profile.availability.title}
+          </p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-[1.4rem] border border-border/70 bg-white/90 p-4">
               <Mail className="size-5 text-primary" />
               <p className="mt-4 text-sm font-medium text-foreground">Email</p>
               <a
@@ -40,7 +29,7 @@ export function Contact({ profile }: { profile: Profile }) {
                 {profile.email}
               </a>
             </div>
-            <div className="rounded-2xl bg-background/80 p-4 ring-1 ring-border">
+            <div className="rounded-[1.4rem] border border-border/70 bg-white/90 p-4">
               <Phone className="size-5 text-primary" />
               <p className="mt-4 text-sm font-medium text-foreground">Phone</p>
               <a
@@ -50,29 +39,41 @@ export function Contact({ profile }: { profile: Profile }) {
                 {profile.phone}
               </a>
             </div>
-            <div className="rounded-2xl bg-background/80 p-4 ring-1 ring-border">
+            <div className="rounded-[1.4rem] border border-border/70 bg-white/90 p-4">
               <MapPin className="size-5 text-primary" />
               <p className="mt-4 text-sm font-medium text-foreground">Location</p>
               <p className="mt-2 text-sm leading-7 text-muted-foreground">{profile.location}</p>
             </div>
           </div>
+        </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-            <Button size="lg" asChild>
+        <aside className="rounded-[2rem] border border-border/70 bg-white/82 p-6">
+          <p className="text-[11px] font-semibold tracking-[0.24em] text-primary uppercase">
+            Availability
+          </p>
+          <ul className="mt-5 grid gap-3">
+            {profile.availability.items.map((item) => (
+              <li key={item} className="text-[15px] leading-8 text-muted-foreground">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-7 flex flex-col gap-3">
+            <Button size="lg" className="h-11 justify-start" asChild>
               <a href={`mailto:${profile.email}`}>
                 <Mail data-icon="inline-start" />
-                Send email
+                Gửi email cho em
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" variant="outline" className="h-11 justify-start" asChild>
               <a href={`tel:${profile.phone}`}>
                 <Phone data-icon="inline-start" />
-                Call now
+                Gọi điện trực tiếp
               </a>
             </Button>
           </div>
-        </CardContent>
-      </Card>
+        </aside>
+      </div>
     </SectionShell>
   );
 }

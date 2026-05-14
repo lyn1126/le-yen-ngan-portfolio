@@ -1,27 +1,27 @@
-import { Menu, Mail, Phone } from "lucide-react";
+import { Mail, Menu, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Profile } from "@/data/profile";
 
 const navItems = [
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
+  { label: "Capabilities", href: "#capabilities" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
 export function Header({ profile }: { profile: Profile }) {
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/88 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <a href="#top" className="min-w-0">
-          <p className="truncate text-sm font-semibold tracking-[0.2em] text-primary uppercase">
+          <p className="truncate text-[11px] font-semibold tracking-[0.28em] text-primary uppercase">
             {profile.name}
           </p>
           <p className="truncate text-sm text-muted-foreground">{profile.role}</p>
         </a>
 
-        <nav className="hidden items-center gap-2 md:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <Button key={item.href} variant="ghost" size="sm" asChild>
               <a href={item.href}>{item.label}</a>

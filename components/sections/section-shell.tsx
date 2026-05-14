@@ -19,26 +19,28 @@ export function SectionShell({
   children,
 }: SectionShellProps) {
   return (
-    <section id={id} className={cn("scroll-mt-24", className)}>
-      <div className="flex flex-col gap-4">
-        <div className="max-w-2xl space-y-3">
-          <p className="text-sm font-semibold tracking-[0.24em] text-primary uppercase">
+    <section id={id} className={cn("scroll-mt-28", className)}>
+      <div className="grid gap-8 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-12">
+        <div className="space-y-4">
+          <p className="text-[11px] font-semibold tracking-[0.28em] text-primary uppercase">
             {eyebrow}
           </p>
-          <div className="space-y-2">
-            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          <div className="space-y-3">
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-[2.15rem]">
               {title}
             </h2>
             {description ? (
-              <p className="text-base leading-7 text-muted-foreground">
+              <p className="text-sm leading-7 text-muted-foreground sm:text-[15px]">
                 {description}
               </p>
             ) : null}
           </div>
         </div>
-        <Separator />
+        <div className="space-y-8">
+          <Separator className="bg-border/80" />
+          <div>{children}</div>
+        </div>
       </div>
-      <div className="mt-8">{children}</div>
     </section>
   );
 }
