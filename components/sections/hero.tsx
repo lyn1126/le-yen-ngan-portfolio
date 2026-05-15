@@ -6,21 +6,15 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
+import Image from "next/image";
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Profile } from "@/data/profile";
 
 export function Hero({ profile }: { profile: Profile }) {
-  const initials = profile.name
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-
   return (
     <section id="hero" className="pt-8 sm:pt-12">
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_22rem] xl:grid-cols-[minmax(0,1.3fr)_24rem]">
@@ -93,16 +87,29 @@ export function Hero({ profile }: { profile: Profile }) {
         <Card className="overflow-hidden border-primary/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(239,246,255,0.82))] shadow-[0_30px_90px_-42px_rgba(37,99,235,0.42)]">
           <CardContent className="flex h-full flex-col gap-6 pt-5">
             <div className="flex items-center gap-4">
-              <Avatar size="lg" className="size-16 bg-primary/10 text-primary">
+              <Avatar size="lg" className="size-16 bg-primary/10 text-primary ring-2 ring-white/90">
+                <AvatarImage src="/avatar.jpg" alt={profile.name} />
                 <AvatarFallback className="bg-primary/10 font-semibold text-primary">
-                  {initials}
+                  {profile.name.slice(0, 1)}
                 </AvatarFallback>
               </Avatar>
               <div className="space-y-1">
                 <p className="text-lg font-semibold text-foreground">{profile.role}</p>
-                <p className="text-sm text-muted-foreground">
-                  Ứng tuyển internship / part-time
-                </p>
+                <p className="text-sm text-muted-foreground">Ứng tuyển internship / part-time</p>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-[1.75rem] border border-primary/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(239,246,255,0.82))] p-2 shadow-[0_22px_60px_-38px_rgba(37,99,235,0.35)]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.3rem] bg-slate-100">
+                <Image
+                  src="/avatar.jpg"
+                  alt={profile.name}
+                  fill
+                  priority
+                  className="object-cover object-center scale-[1.02]"
+                  sizes="(min-width: 1280px) 384px, (min-width: 1024px) 352px, 100vw"
+                />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/14 to-transparent" />
               </div>
             </div>
 
